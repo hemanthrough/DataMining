@@ -27,7 +27,21 @@ total_permutaions <- choose(8,6)
 probality<- total_combiationa/total_permutaions
 
 print(c("this has the probability ",probality*100))
-
+contigencyTable <- function(r1,r2,c1,c2,x){
+  d11 <- x
+  d12 = r1-x#remaining value
+  
+  d21<- c1-x
+  
+  d22 <- c2 - d12# remaing value
+ # print(matrix(c(d11,d12,d21,d22),nrow = 2))
+  combiations <- choose(r1,d11)*choose(r1,d21)
+  #print(combiations)
+  total_combiations <- choose(r1+r2,d11+d21)
+  probality <- combiations/total_combiations
+ # print(probality)
+  return( probality)
+}
 
 #excercise 2 b
 total_combiationa<- (choose(4,2)*choose(4,4) + choose(4,3)*choose(4,3)+choose(4,4)*choose(4,2))
