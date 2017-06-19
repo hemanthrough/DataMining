@@ -212,3 +212,13 @@ arrows(x0= base_vect1[1],y0=base_vect2[1],x1= 11,y1=9,col = "yellow")
 
 #in the following inverse matrix is the one which gives identity mat so the
 # secnd is not as expected
+
+
+
+
+
+
+#a matrix and its trans mat is alsways sq because
+#if its of m x n its transpose will be of the form n x m the resultant mat 
+# will always be of the form of row of first(m) and colunmn of second mat (m)
+#hence we can say that its always sq
