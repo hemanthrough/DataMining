@@ -58,4 +58,4 @@ liner2varsNew<-lm(y~x1+x2,data = dataSet)
 summary(liner2varsNew)
 plot(liner2varsNew)
 predict(liner2varsNew,data.frame(x1=2,x2=1))
-
+#as we can see the predicts have reduced slope  is more slant ie less steep
