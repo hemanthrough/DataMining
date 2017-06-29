@@ -51,11 +51,15 @@ predict(liner2vars,data.frame(x1=2,x2=1))
 #chaning the coordinates 
 dataSet[dataSet$x1 ==1,1] <-40 
 dataSet[dataSet$x1 ==-1,1] <- 20
-dataSet[dataSet$x1 ==1,1] <-30
-dataSet[dataSet$x1 ==-1,1] <-20
+dataSet[dataSet$x2 ==1,2] <-30
+dataSet[dataSet$x2 ==-1,2] <-20
 dataSet
 liner2varsNew<-lm(y~x1+x2,data = dataSet)
 summary(liner2varsNew)
 plot(liner2varsNew)
 predict(liner2varsNew,data.frame(x1=2,x2=1))
 #as we can see the predicts have reduced slope  is more slant ie less steep
+scatterplot3d(x1,x2,predict(liner2vars,dataSet), highlight.3d=TRUE,pch=16,type = "l") 
+
+#slope becomes more slant
+scatterplot3d(x1,x2,predict(liner2varsNew,dataSet), highlight.3d=TRUE,pch=16,type = "l")
