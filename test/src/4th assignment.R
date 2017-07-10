@@ -1,3 +1,4 @@
+library(scatterplot3d)
 shoesize<-c(38,38,39,39,40,40,41,41,42,42)
 bodysize<-c(153,161,167,169,173,176,182,181,188,189)
 bspl<-data.frame(shoesize,bodysize)
@@ -59,7 +60,7 @@ summary(liner2varsNew)
 plot(liner2varsNew)
 predict(liner2varsNew,data.frame(x1=2,x2=1))
 #as we can see the predicts have reduced slope  is more slant ie less steep
-scatterplot3d(x1,x2,predict(liner2vars,dataSet), highlight.3d=TRUE,pch=16,type = "l") 
+scatterplot3d(x1,x2,predict(liner2vars,dataSet), highlight.3d=TRUE,type = "l") 
 
 #slope becomes more slant
-scatterplot3d(x1,x2,predict(liner2varsNew,dataSet), highlight.3d=TRUE,pch=16,type = "l")
+scatterplot3d(x1,x2,predict(liner2varsNew,dataSet), highlight.3d=TRUE,type = "l")
