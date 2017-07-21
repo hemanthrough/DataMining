@@ -30,16 +30,16 @@ Ass6_dm_dataPred <-Ass6_dm_dataPred[,-1]
 predict(bloodLinearModel,Ass6_dm_dataPred)
 
 Ass6_dm_data_log <- Ass6_dm_data
-Ass6_dm_data_log<-log(Ass6_dm_data+1)
+Ass6_dm_data_log[,-1]<-log(Ass6_dm_data[,-1]+1)
 bloodLogModel<-lm(model,data = Ass6_dm_data_log)
 summary(bloodLogModel)
 plot(bloodLogModel)
 hist(bloodLogModel$residuals)
 #has to verified anti log of log(x+1)
-plot(Ass6_dm_data$age,(exp(bloodLinearModel$fitted.values))-1)
-predict(bloodLogModel,Ass6_dm_dataPred)
+plot(Ass6_dm_data$age,bloodLinearModel$fitted.values)
+predict(bloodLogModel,log(Ass6_dm_dataPred)+1)
 #how can we use y as in 
-sqmodel<- as.formula(paste("sqrt(exp(age)-1) ~", paste(cols[!cols %in% cols[1]], collapse = " + ")))
+sqmodel<- as.formula(paste("sqrt(age) ~", paste(cols[!cols %in% cols[1]], collapse = " + ")))
 bloodSqrtModel<-lm(sqmodel,data = Ass6_dm_data_log)
 summary(bloodSqrtModel)
 plot(bloodSqrtModel)
